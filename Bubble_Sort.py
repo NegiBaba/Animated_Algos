@@ -58,7 +58,7 @@ def draw_graph(win, bars, bar_width):
 
 def main(win, width):
 	bar_width = 5
-	total_bars = width // bar_wihdth
+	total_bars = width // bar_width
 
 	run = True
 
