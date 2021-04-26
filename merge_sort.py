@@ -108,10 +108,11 @@ def main():
 			if event.type == pygame.QUIT:
 				run = False
 
-		if(not sorted):
-			mergeSort(bars, 0, total_bars - 1, total_bars, bars_width)
+		mergeSort(bars, 0, total_bars - 1, total_bars, bars_width)
 		
-	
+		# the time till which pygame window will be running
+		pygame.time.delay(5000)
+		run = False
 	pygame.quit()
 
 
