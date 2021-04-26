@@ -40,6 +40,7 @@ def merge(bars, l, m, h, total_bars, bars_width):
 	for i in range(0, n1):
 		left.append(bars[l + i])
 
+
 	for i in range(0, n2):
 		right.append(bars[m + i + 1])
 
@@ -56,7 +57,7 @@ def merge(bars, l, m, h, total_bars, bars_width):
 			bars[k] = right[j]
 			k += 1
 			j += 1
-		pygame.display.update()
+		#pygame.display.update()
 		WIN.fill((0, 0, 0))
 		draw(bars, total_bars, bars_width)
 		pygame.display.update()
