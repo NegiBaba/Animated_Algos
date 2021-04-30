@@ -41,7 +41,7 @@ function draw() {
   fill('white');
   for(let i = 0; i < bars.length; i++)
     {
-      rect(i * bars_width, height - bars[i], bars_width, bars[i]);
+      rect(i * bars_width, height - bars[i], bars_width - 2, bars[i]);
     }
 }
 
