@@ -2,7 +2,7 @@ import pygame
 import random
 
 #height and width of the window in which animation will run
-WIDTH = 1200
+WIDTH = 1176
 HEIGHT = 600
 
 win = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -15,7 +15,7 @@ RED = (255, 0, 0)
 # this method will only draw the bars on the given window
 def draw(bars, total_bars, bars_width):
 	for i in range(total_bars):
-		pygame.draw.rect(win, WHITE, (i * bars_width , HEIGHT - bars[i], bars_width	- 1, bars[i]))
+		pygame.draw.rect(win, WHITE, (i * bars_width , HEIGHT - bars[i] + 1, bars_width	- 1, bars[i]))
 
 def lomuto_partition(bars, l, h, total_bars, bars_width):
 	pivot = bars[h]
@@ -65,9 +65,20 @@ def main():
 
 	bars = [] # list that will contain the height of the bars
 
+	'''
+	you can either use this method for having randomized heigh and bars
 	for i in range(0, total_bars):
 		bars.append(random.randrange(10, HEIGHT - 5, 1))
 		#randomizing the bars_height from 10 to 590 with 1 as a step
+	'''
+	# or use this second method to have a ramp and then randomzie it
+	curr_height = HEIGHT - 10
+	for i in range(0, total_bars):
+		#this time lets try something different
+		bars.append(curr_height)
+		curr_height -= 1.5
+
+	random.shuffle(bars)
 
 	draw(bars, total_bars, bars_width)
 	pygame.display.update()
